@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Terminal Typer to GitHub Pages
 
 on:
   push:
@@ -9,21 +9,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
 
-      - name: Export static HTML
+      - name: Copy Files to /dist
         run: |
           mkdir dist
-          echo '<h1>Terminal Typing SVG Server</h1>' > dist/index.html
+          echo '<!DOCTYPE html><html><head><title>Terminal Typer</title></head><body><h1>Terminal Typer Server</h1></body></html>' > dist/index.html
           cp -r public/* dist/
 
       - name: Deploy to GitHub Pages
