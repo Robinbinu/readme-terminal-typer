@@ -1,0 +1,12 @@
+{
+  "name": "terminal-typing-svg",
+  "version": "1.0.0",
+  "description": "Terminal-style animated SVG with typewriter effect",
+  "main": "public/index.js",
+  "scripts": {
+    "start": "node public/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
